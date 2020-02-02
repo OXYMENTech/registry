@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MainApplication",
+            "request": "launch",
+            "mainClass": "com.spring.app.MainApplication",
+            "projectName": "seed"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MainApplication",
+            "request": "launch",
+            "mainClass": "com.spring.app.MainApplication",
+            "projectName": "sOAuth2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SOAuth2Application",
+            "request": "launch",
+            "mainClass": "com.oxymen.sOAuth2.SOAuth2Application",
+            "projectName": "sOAuth2"
+        }
+    ]
+}

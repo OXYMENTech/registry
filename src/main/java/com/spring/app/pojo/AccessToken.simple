@@ -1,0 +1,144 @@
+package com.spring.app.pojo;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+@Entity
+@Table(name = "access_tokens", indexes = {
+    // @Index(columnList = "id", name = "token_id_hidx"),
+    @Index(columnList = "username", name = "username_hidx"),
+    @Index(columnList = "token", name = "token_hidx")
+})
+public class AccessToken {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String token;
+
+    @CreationTimestamp
+    private Date createdAt;
+    
+    @UpdateTimestamp
+    private Date updatedAt;
+    
+    private int expiration;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean revoked;
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * @param token the token to set
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * @return the createdAt
+     */
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    /**
+     * @param createdAt the createdAt to set
+     */
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * @return the updatedAt
+     */
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    /**
+     * @param updatedAt the updatedAt to set
+     */
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * @return the expiration
+     */
+    public int getExpiration() {
+        return expiration;
+    }
+
+    /**
+     * @param expiration the expiration to set
+     */
+    public void setExpiration(int expiration) {
+        this.expiration = expiration;
+    }
+
+    /**
+     * @return the revoked
+     */
+    public boolean isRevoked() {
+        return revoked;
+    }
+
+    /**
+     * @param revoked the revoked to set
+     */
+    public void setRevoked(boolean revoked) {
+        this.revoked = revoked;
+    }
+
+    
+}

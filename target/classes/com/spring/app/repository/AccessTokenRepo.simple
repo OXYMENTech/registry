@@ -1,0 +1,23 @@
+package com.spring.app.repository;
+
+import com.spring.app.pojo.AccessToken;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+// This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
+// CRUD refers Create, Read, Update, Delete
+public interface AccessTokenRepo extends CrudRepository<AccessToken, Integer> {
+
+    @Modifying
+    @Query("Update AccessToken SET revoked = true WHERE token = ?1")
+    void revokeByToken(String token);
+
+    @Modifying
+    @Query("Update AccessToken SET revoked = true WHERE username = ?1")
+    void revokeByUsername(String username);
+
+    @Query("SELECT a FROM AccessToken a WHERE a.token = ?1")
+    AccessToken findByToken(String token);
+}
