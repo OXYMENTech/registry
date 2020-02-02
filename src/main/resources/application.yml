@@ -1,0 +1,19 @@
+server:
+  port: 8600
+  application:
+    name: discovery-server
+  
+# disable blew configuration will cause 404 problem of management page    
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+
+eureka: 
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
