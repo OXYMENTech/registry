@@ -10,6 +10,8 @@ spring:
     prefer-file-system-access: false
 
 eureka: 
+  server:
+    enableSelfPreservation: false
   instance:
     hostname: localhost
   client:
