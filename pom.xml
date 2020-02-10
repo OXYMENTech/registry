@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring</groupId>
-	<artifactId>seed</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>registry</artifactId>
+	<version>1.0.0</version>
 	<name>registry</name>
 	<description>Registry for oxymen services</description>
 
