@@ -5,6 +5,13 @@
             "name": "CodeLens (Launch) - MainApplication",
             "request": "launch",
             "mainClass": "com.spring.app.MainApplication",
+            "projectName": "registry"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MainApplication",
+            "request": "launch",
+            "mainClass": "com.spring.app.MainApplication",
             "projectName": "seed"
         },
         {
