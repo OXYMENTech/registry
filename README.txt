@@ -10,7 +10,7 @@ mvn package -DskipTests
 
 # Build Docker image
 
-docker build -t docker-registry .
+docker build -t eureka-registry .
 
 
 
@@ -20,4 +20,4 @@ sudo ./build.sh
 
 以上会自动拉取最新代码并编译Jar文件与Docker Image文件
 
-
+编译后的docker镜像image为 eureka-registry
