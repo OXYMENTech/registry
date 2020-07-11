@@ -19,6 +19,7 @@ if [ -z "$(git status --porcelain)" ]; then
     # tag it
     # git add -A
     # git commit -m "version $version"
+    git tag --delete "$version"
     git tag -a "$version" -m "version $version"
     git push
     git push --tags https://f689da7bc483cddeab89014823f7eb2b49e47fb0:x-oauth-basic@github.com/OXYMENTech/registry.git
