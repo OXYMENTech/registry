@@ -16,6 +16,13 @@ if [ -z "$(git status --porcelain)" ]; then
     
     docker build -t eureka-registry:$version .
 
+    # tag it
+    # git add -A
+    # git commit -m "version $version"
+    git tag -a "$version" -m "version $version"
+    git push
+    git push --tags
+
     echo "Build Version: $version"
 else 
   # Uncommitted changes
