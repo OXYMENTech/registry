@@ -16,6 +16,9 @@ docker build -t eureka-registry .
 
 ======================== 2020-07-12 编译方式 =========================
 
+首先修改VERSION文件
+
+然后运行：
 sudo ./build.sh
 
 以上会自动拉取最新代码并编译Jar文件与Docker Image文件
